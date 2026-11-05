@@ -292,10 +292,30 @@ export const PrintableReportDocument = forwardRef<
           )}
         </div>
 
-        {/* Footer Page 2 */}
-        <div className="pt-3 border-t border-[#e2e8f0] flex justify-between text-xs text-[#64748b]">
-          <span>Raport Odbioru Lokalu • {report.general.address || 'Lokal'}</span>
-          <span>Strona 2 z 2</span>
+        {/* Dolna sekcja strony 2: Imię i nazwisko koordynatora oraz stopka */}
+        <div className="mt-auto">
+          {/* Imię i nazwisko koordynatora */}
+          <div className="mb-4 pt-3 border-t border-[#cbd5e1] flex items-center justify-between text-[#0f172a]">
+            <div className="flex items-center">
+              <span className="font-semibold text-[#1e293b] mr-2 text-[12.5px]">
+                Imię i nazwisko koordynatora:
+              </span>
+              <span className="font-bold text-[#020617] text-[13px]">
+                {report.inspectorName ? report.inspectorName : '—'}
+              </span>
+            </div>
+            {report.inspectorName && (
+              <span className="text-[11px] text-[#64748b] font-medium">
+                Koordynator odbioru
+              </span>
+            )}
+          </div>
+
+          {/* Footer Page 2 */}
+          <div className="pt-3 border-t border-[#e2e8f0] flex justify-between text-xs text-[#64748b]">
+            <span>Raport Odbioru Lokalu • {report.general.address || 'Lokal'}</span>
+            <span>Strona 2 z 2</span>
+          </div>
         </div>
       </div>
     </div>

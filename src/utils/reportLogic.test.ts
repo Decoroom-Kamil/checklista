@@ -147,3 +147,12 @@ test('generateMailtoUrl uses report recipientEmail when customEmail is omitted',
   assert.equal(url.includes('&body='), false);
 });
 
+test('InspectionReport supports coordinator name (inspectorName)', () => {
+  const empty = createEmptyReport();
+  assert.equal(empty.inspectorName, '');
+
+  empty.inspectorName = 'Jan Kowalski';
+  assert.equal(empty.inspectorName, 'Jan Kowalski');
+});
+
+
